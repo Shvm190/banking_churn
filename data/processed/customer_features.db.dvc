@@ -1,5 +1,5 @@
 outs:
-- md5: d41d8cd98f00b204e9800998ecf8427e
-  size: 0
+- md5: 34e4a8557b7ace279ab209a3610e4c96
+  size: 532480
   hash: md5
   path: customer_features.db
