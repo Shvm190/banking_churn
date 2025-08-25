@@ -1,0 +1,4 @@
+2025-08-25 01:02:27,028 - INFO - Starting data transformation...
+2025-08-25 01:02:27,056 - INFO - Engineered new feature: 'avg_monthly_charge_per_tenure'.
+2025-08-25 01:02:27,074 - INFO - Encoded categorical variables using one-hot encoding.
+2025-08-25 01:02:27,186 - INFO - Transformed data saved to SQLite database at /Users/homeaccount/PycharmProjects/dmml/banking_churn/scripts/../data/processed/customer_features.db.

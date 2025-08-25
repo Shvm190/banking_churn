@@ -1,0 +1,1 @@
+*/500000 * * * * /Users/homeaccount/miniconda3/envs/prefect_env/bin/python /Users/homeaccount/PycharmProjects/dmml/banking_churn/prefect_dag.py >> /Users/homeaccount/PycharmProjects/dmml/banking_churn/logs/churn.log 2>&1

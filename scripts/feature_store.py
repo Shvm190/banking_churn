@@ -1,14 +1,11 @@
-
-# ---
 # scripts/feature_store.py
-# Deliverables: Feature store configuration/code and documentation
+# Deliverables: Auto-generate feature metadata for all engineered/transformed features
 
 import json
 import logging
 import os
-
-# Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+import sqlite3
+from datetime import datetime
 
 class FeatureStore:
     """
@@ -40,7 +37,6 @@ class FeatureStore:
             "version": version
         }
         logging.info(f"Added metadata for feature: {feature_name}")
-        self.save_metadata()
 
     def save_metadata(self):
         """Saves the current feature metadata to the JSON file."""
@@ -48,24 +44,71 @@ class FeatureStore:
             json.dump(self.features, f, indent=4)
         logging.info("Feature metadata saved.")
 
-# Example Usage to add features
-if __name__ == '__main__':
-    metadata_file = os.path.join(os.path.dirname(__file__), '../features.json')
-    fs = FeatureStore(metadata_file)
-    
-    # Add metadata for the new features created in the transform step
-    fs.add_feature_metadata(
-        "avg_monthly_charge_per_tenure",
-        "Average monthly charge divided by customer tenure in months. A high value may indicate a new, high-value customer.",
-        "derived from MonthlyCharges and tenure",
-        "1.0"
-    )
-    
-    fs.add_feature_metadata(
-        "IsSeniorCitizen",
-        "A binary feature indicating if the customer is 65 years or older. This is derived from the 'age' column.",
-        "derived from age",
-        "1.0"
-    )
 
-    logging.info("Feature store demonstration complete. Check your `features.json` file for the output.")
+def auto_register_features(db_path, metadata_path):
+    """
+    Auto-discovers features from the transformed SQLite DB and registers them in the Feature Store.
+    """
+    fs = FeatureStore(metadata_path)
+
+    # Connect to database
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    # Get column names from 'customer_features' table
+    cursor.execute("PRAGMA table_info(customer_features);")
+    columns = cursor.fetchall()
+    conn.close()
+
+    for col in columns:
+        feature_name = col[1]
+
+        # Skip ID column if present
+        if feature_name.lower() in ["customerid"]:
+            continue
+
+        # Auto-generate description and source
+        if feature_name == "avg_monthly_charge_per_tenure":
+            desc = "Average monthly charge divided by customer tenure in months."
+            src = "Derived from MonthlyCharges and tenure"
+        elif feature_name.startswith("Contract_"):
+            desc = f"Binary feature indicating if customer contract type is {feature_name.replace('Contract_', '')}."
+            src = "Derived from Contract column"
+        elif feature_name.startswith("InternetService_"):
+            desc = f"Binary feature indicating if internet service type is {feature_name.replace('InternetService_', '')}."
+            src = "Derived from InternetService column"
+        elif feature_name.startswith("PaymentMethod_"):
+            desc = f"Binary feature indicating if payment method is {feature_name.replace('PaymentMethod_', '')}."
+            src = "Derived from PaymentMethod column"
+        else:
+            desc = f"Feature derived from original dataset column: {feature_name}."
+            src = "Telco churn dataset"
+
+        fs.add_feature_metadata(
+            feature_name,
+            desc,
+            src,
+            "1.0"
+        )
+
+    fs.save_metadata()
+
+
+if __name__ == '__main__':
+
+    # Generate filename with current datetime
+    log_filename = f"logs/featureStore_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+    
+    # Configure logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        filename=log_filename,  # write logs to file
+        filemode='a'             # append mode
+    )
+    
+    metadata_file = os.path.join(os.path.dirname(__file__), '../features.json')
+    db_path = os.path.join(os.path.dirname(__file__), '../data/processed/customer_features.db')
+
+    auto_register_features(db_path, metadata_file)
+    logging.info("Auto feature registration complete. Check `features.json` for output.")

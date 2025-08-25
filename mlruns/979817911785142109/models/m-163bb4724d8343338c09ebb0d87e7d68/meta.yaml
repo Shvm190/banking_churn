@@ -1,0 +1,10 @@
+artifact_location: file:///Users/homeaccount/PycharmProjects/dmml/banking_churn/mlruns/979817911785142109/models/m-163bb4724d8343338c09ebb0d87e7d68/artifacts
+creation_timestamp: 1756081543683
+experiment_id: '979817911785142109'
+last_updated_timestamp: 1756081549127
+model_id: m-163bb4724d8343338c09ebb0d87e7d68
+model_type: null
+name: random_forest_model
+source_run_id: b6da5f72941a4670a5360bd15b26a3b7
+status: 2
+status_message: null

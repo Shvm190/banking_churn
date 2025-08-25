@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/homeaccount/PycharmProjects/dmml/banking_churn/mlruns/979817911785142109/eb9d452b283c4d278bd1fe40ef8054ed/artifacts
+end_time: 1756080288459
+entry_point_name: ''
+experiment_id: '979817911785142109'
+lifecycle_stage: active
+run_id: eb9d452b283c4d278bd1fe40ef8054ed
+run_name: Random Forest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756080278739
+status: 3
+tags: []
+user_id: homeaccount

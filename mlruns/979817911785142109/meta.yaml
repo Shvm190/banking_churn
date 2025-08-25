@@ -1,0 +1,6 @@
+artifact_location: file:///Users/homeaccount/PycharmProjects/dmml/banking_churn/mlruns/979817911785142109
+creation_time: 1756080155673
+experiment_id: '979817911785142109'
+last_update_time: 1756080155673
+lifecycle_stage: active
+name: Churn Prediction RF Model Training

@@ -1,0 +1,34 @@
+2025-08-25 01:06:31,565 - INFO - Added metadata for feature: SeniorCitizen
+2025-08-25 01:06:31,565 - INFO - Added metadata for feature: tenure
+2025-08-25 01:06:31,565 - INFO - Added metadata for feature: MonthlyCharges
+2025-08-25 01:06:31,565 - INFO - Added metadata for feature: TotalCharges
+2025-08-25 01:06:31,565 - INFO - Added metadata for feature: avg_monthly_charge_per_tenure
+2025-08-25 01:06:31,565 - INFO - Added metadata for feature: gender_Male
+2025-08-25 01:06:31,565 - INFO - Added metadata for feature: Partner_Yes
+2025-08-25 01:06:31,565 - INFO - Added metadata for feature: Dependents_Yes
+2025-08-25 01:06:31,565 - INFO - Added metadata for feature: PhoneService_Yes
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: MultipleLines_No phone service
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: MultipleLines_Yes
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: InternetService_Fiber optic
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: InternetService_No
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: OnlineSecurity_No internet service
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: OnlineSecurity_Yes
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: OnlineBackup_No internet service
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: OnlineBackup_Yes
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: DeviceProtection_No internet service
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: DeviceProtection_Yes
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: TechSupport_No internet service
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: TechSupport_Yes
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: StreamingTV_No internet service
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: StreamingTV_Yes
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: StreamingMovies_No internet service
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: StreamingMovies_Yes
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: Contract_One year
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: Contract_Two year
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: PaperlessBilling_Yes
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: PaymentMethod_Credit card (automatic)
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: PaymentMethod_Electronic check
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: PaymentMethod_Mailed check
+2025-08-25 01:06:31,566 - INFO - Added metadata for feature: Churn_Yes
+2025-08-25 01:06:31,567 - INFO - Feature metadata saved.
+2025-08-25 01:06:31,567 - INFO - Auto feature registration complete. Check `features.json` for output.

@@ -1,0 +1,145 @@
+01:02:05.300 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8232
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+01:02:09.981 | INFO    | Flow run 'caped-crocodile' - Beginning flow run 'caped-crocodile' for flow 'churn-pipeline'
+
+To track the changes with git, run:
+
+	git add data/raw/hf_bank_customer_support.csv.dvc data/raw/telco_churn.csv.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+On branch main
+Your branch is ahead of 'origin/main' by 5 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .ipynb_checkpoints/prefect_dag-checkpoint.py
+	modified:   prefect_dag.py
+	deleted:    scripts/entrypoint.sh
+	modified:   scripts/feature_store.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	.gitignore
+	.ipynb_checkpoints/features-checkpoint.json
+	data/.DS_Store
+	data/prepared/churn_distribution.png
+	data/prepared/churn_vs_contract.png
+	data/prepared/churn_vs_internet_service.png
+	data/prepared/monthly_charges_vs_churn.png
+	data/prepared/tenure_vs_churn.png
+	data/raw/.ipynb_checkpoints/
+	data/setup_dvc.sh
+	logs/
+	scripts/.DS_Store
+	scripts/.ipynb_checkpoints/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+01:02:16.898 | INFO    | Task run 'run_ingestion-222' - Finished in state Completed()
+
+To track the changes with git, run:
+
+	git add data/validation_report.csv.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+[main b8b399f] Version validation report
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+1 file pushed
+01:02:20.482 | INFO    | Task run 'run_validation-c40' - Finished in state Completed()
+
+To track the changes with git, run:
+
+	git add data/prepared/customer_data_cleaned.csv.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+On branch main
+Your branch is ahead of 'origin/main' by 6 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .ipynb_checkpoints/prefect_dag-checkpoint.py
+	modified:   prefect_dag.py
+	deleted:    scripts/entrypoint.sh
+	modified:   scripts/feature_store.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	.gitignore
+	.ipynb_checkpoints/features-checkpoint.json
+	data/.DS_Store
+	data/prepared/churn_distribution.png
+	data/prepared/churn_vs_contract.png
+	data/prepared/churn_vs_internet_service.png
+	data/prepared/monthly_charges_vs_churn.png
+	data/prepared/tenure_vs_churn.png
+	data/raw/.ipynb_checkpoints/
+	data/setup_dvc.sh
+	logs/
+	scripts/.DS_Store
+	scripts/.ipynb_checkpoints/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+01:02:26.315 | INFO    | Task run 'run_prepare-193' - Finished in state Completed()
+
+To track the changes with git, run:
+
+	git add data/processed/customer_features.db.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+[main 288b8cc] Version transformed features
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+1 file pushed
+01:02:30.005 | INFO    | Task run 'run_transform-c88' - Finished in state Completed()
+
+To track the changes with git, run:
+
+	git add features.json.dvc
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+On branch main
+Your branch is ahead of 'origin/main' by 7 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .ipynb_checkpoints/prefect_dag-checkpoint.py
+	modified:   prefect_dag.py
+	deleted:    scripts/entrypoint.sh
+	modified:   scripts/feature_store.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	.gitignore
+	.ipynb_checkpoints/features-checkpoint.json
+	data/.DS_Store
+	data/prepared/churn_distribution.png
+	data/prepared/churn_vs_contract.png
+	data/prepared/churn_vs_internet_service.png
+	data/prepared/monthly_charges_vs_churn.png
+	data/prepared/tenure_vs_churn.png
+	data/raw/.ipynb_checkpoints/
+	data/setup_dvc.sh
+	logs/
+	scripts/.DS_Store
+	scripts/.ipynb_checkpoints/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+01:02:32.038 | INFO    | Task run 'run_feature_store-477' - Finished in state Completed()
+2025/08/25 01:02:35 INFO mlflow.tracking.fluent: Experiment with name 'Churn Prediction RF Model Training' does not exist. Creating a new experiment.

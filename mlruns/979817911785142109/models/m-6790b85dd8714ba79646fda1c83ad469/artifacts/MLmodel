@@ -1,0 +1,22 @@
+artifact_path: file:///Users/homeaccount/PycharmProjects/dmml/banking_churn/mlruns/979817911785142109/models/m-6790b85dd8714ba79646fda1c83ad469/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.18
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.3.1
+model_id: m-6790b85dd8714ba79646fda1c83ad469
+model_size_bytes: 29318929
+model_uuid: m-6790b85dd8714ba79646fda1c83ad469
+prompts: null
+run_id: 47501886ee134867aad51479bf0f5645
+utc_time_created: '2025-08-25 00:30:43.992472'
